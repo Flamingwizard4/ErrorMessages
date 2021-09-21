@@ -1,0 +1,21 @@
+ File "PreprocessingscGNN.py", line 315, in <module>
+    args.cellRatio, args.geneRatio, args.geneCriteria, args.geneSelectnum, args.transpose, args.tabuCol)
+  File "PreprocessingscGNN.py", line 295, in preprocessingCSV
+    df3 = df2.loc[criteriaSelectGene.index]
+  File "/data/home/jmoorman9/anaconda3/envs/scGNN/lib/python3.6/site-packages/pandas/core/indexing.py", line 1424, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+  File "/data/home/jmoorman9/anaconda3/envs/scGNN/lib/python3.6/site-packages/pandas/core/indexing.py", line 1839, in _getitem_axis
+    return self._getitem_iterable(key, axis=axis)
+  File "/data/home/jmoorman9/anaconda3/envs/scGNN/lib/python3.6/site-packages/pandas/core/indexing.py", line 1135, in _getitem_iterable
+    {axis: [keyarr, indexer]}, copy=True, allow_dups=True
+  File "/data/home/jmoorman9/anaconda3/envs/scGNN/lib/python3.6/site-packages/pandas/core/generic.py", line 4577, in _reindex_with_indexers
+    copy=copy,
+  File "/data/home/jmoorman9/anaconda3/envs/scGNN/lib/python3.6/site-packages/pandas/core/internals/managers.py", line 1267, in reindex_indexer
+    for blk in self.blocks
+  File "/data/home/jmoorman9/anaconda3/envs/scGNN/lib/python3.6/site-packages/pandas/core/internals/managers.py", line 1267, in <listcomp>
+    for blk in self.blocks
+  File "/data/home/jmoorman9/anaconda3/envs/scGNN/lib/python3.6/site-packages/pandas/core/internals/blocks.py", line 1313, in take_nd
+    values, indexer, axis=axis, allow_fill=allow_fill, fill_value=fill_value
+  File "/data/home/jmoorman9/anaconda3/envs/scGNN/lib/python3.6/site-packages/pandas/core/algorithms.py", line 1716, in take_nd
+    out = np.empty(out_shape, dtype=dtype)
+MemoryError: Unable to allocate 3.29 TiB for an array with shape (33673, 13428075) and data type int64
