@@ -19,3 +19,19 @@
   File "/data/home/jmoorman9/anaconda3/envs/scGNN/lib/python3.6/site-packages/pandas/core/algorithms.py", line 1716, in take_nd
     out = np.empty(out_shape, dtype=dtype)
 MemoryError: Unable to allocate 3.29 TiB for an array with shape (33673, 13428075) and data type int64
+
+(12944, 33673)
+After preprocessing, 12944 genes remaining
+(12944, 33673)
+After preprocessing, 33673 cells have 0.99 nonzero
+                           BHVE_AAACCCATCGGACGTC.1_1  ...  CTRL_TTTGTTGTCCTGGTCT.1_10
+BHVE_AAACCCACACAATCTG.1_1                             ...                            
+0                                                  0  ...                           0
+0                                                  0  ...                           0
+0                                                  0  ...                           0
+0                                                  0  ...                           0
+0                                                  0  ...                           0
+
+[5 rows x 33673 columns]  Dimensions of  0 :  (11421, 33673)
+Unique elements in criteria index:  22
+Unique elements in criteria slice index:  1
