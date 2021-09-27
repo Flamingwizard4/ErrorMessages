@@ -34,4 +34,8 @@ BHVE_AAACCCACACAATCTG.1_1                             ...
 
 [5 rows x 33673 columns]  Dimensions of  0 :  (11421, 33673)
 Unique elements in criteria index:  22
+
+https://stackoverflow.com/questions/45990001/forcing-pandas-iloc-to-return-a-single-row-dataframe
+https://www.kdnuggets.com/2019/06/select-rows-columns-pandas.html
+https://www.geeksforgeeks.org/python-pandas-extracting-rows-using-loc/
 Unique elements in criteria slice index:  1
