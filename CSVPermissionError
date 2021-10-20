@@ -1,0 +1,20 @@
+(scGNN) [jmoorman9@biocomputesrg scGNN]$ python -W ignore PreprocessingscGNN.py --datasetName bb_subsample_02222021.csv.gz --datasetDir CichlidData/ --LTMGDir / --filetype CSV --geneSelectnum 2000 --inferLTMGTag
+Step1: Start filter and generating CSV
+Input scRNA data in CSV format is validated, start reading...
+Data loaded, start filtering...
+(12944, 33674)
+After preprocessing, 12944 genes remaining
+(12944, 33674)
+After preprocessing, 33674 cells have 0.99 nonzero
+Traceback (most recent call last):
+  File "PreprocessingscGNN.py", line 320, in <module>
+    args.cellRatio, args.geneRatio, args.geneCriteria, args.geneSelectnum, args.transpose, args.tabuCol)
+  File "PreprocessingscGNN.py", line 303, in preprocessingCSV
+    df3.to_csv(csvFilename)
+  File "/data/home/jmoorman9/anaconda3/envs/scGNN/lib/python3.6/site-packages/pandas/core/generic.py", line 3228, in to_csv
+    formatter.save()
+  File "/data/home/jmoorman9/anaconda3/envs/scGNN/lib/python3.6/site-packages/pandas/io/formats/csvs.py", line 183, in save
+    compression=self.compression,
+  File "/data/home/jmoorman9/anaconda3/envs/scGNN/lib/python3.6/site-packages/pandas/io/common.py", line 399, in _get_handle
+    f = open(path_or_buf, mode, encoding=encoding, newline="")
+PermissionError: [Errno 13] Permission denied: '/Use_expression.csv'
