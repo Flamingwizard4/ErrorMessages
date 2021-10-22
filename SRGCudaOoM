@@ -1,0 +1,254 @@
+(scGNN) [jmoorman9@biocomputesrg scGNN]$ python -W ignore scGNN.py --datasetName CichlidData --datasetDir ./ --LTMGDir /data/home/jmoorman9/scGNN/CichlidData --outputDir outputdir/ --EM-iteration 2 --Regu-epochs 50 --EM-epochs 20 --quickmode --nonsparseMode --regulized-type LTMG
+Using device:cuda
+---0:00:00---scRNA starts loading.
+Load expression in csv format
+---0:01:40---scRNA has been successfully loaded
+---0:01:40---TrainLoader has been successfully prepared.
+Start loading LTMG in sparse coding.
+Traceback (most recent call last):
+  File "scGNN.py", line 194, in <module>
+    args.LTMGDir+args.datasetName+'/', args.ltmgFile)
+  File "/data/home/jmoorman9/scGNN/util_function.py", line 598, in readLTMG
+    skiprows=1, delim_whitespace=True)
+  File "/data/home/jmoorman9/anaconda3/envs/scGNN/lib/python3.6/site-packages/pandas/io/parsers.py", line 685, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/data/home/jmoorman9/anaconda3/envs/scGNN/lib/python3.6/site-packages/pandas/io/parsers.py", line 457, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+  File "/data/home/jmoorman9/anaconda3/envs/scGNN/lib/python3.6/site-packages/pandas/io/parsers.py", line 895, in __init__
+    self._make_engine(self.engine)
+  File "/data/home/jmoorman9/anaconda3/envs/scGNN/lib/python3.6/site-packages/pandas/io/parsers.py", line 1135, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/data/home/jmoorman9/anaconda3/envs/scGNN/lib/python3.6/site-packages/pandas/io/parsers.py", line 1917, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 689, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: [Errno 2] File b'/data/home/jmoorman9/scGNN/CichlidDataCichlidData/LTMG_sparse.mtx' does not exist: b'/data/home/jmoorman9/scGNN/CichlidDataCichlidData/LTMG_sparse.mtx'
+(scGNN) [jmoorman9@biocomputesrg scGNN]$ python -W ignore scGNN.py --datasetName CichlidData --datasetDir ./ --LTMGDir /data/home/jmoorman9/scGNN/ --outputDir outputdir/ --EM-iteration 2 --Regu-epochs 50 --EM-epochs 20 --quickmode --nonsparseMode --regulized-type LTMG
+Using device:cuda
+---0:00:00---scRNA starts loading.
+Load expression in csv format
+---0:01:34---scRNA has been successfully loaded
+---0:01:34---TrainLoader has been successfully prepared.
+Start loading LTMG in sparse coding.
+---0:01:43---LTMG has been successfully prepared.
+---0:01:53---Pytorch model ready.
+Start training...
+Train Epoch: 1 [0/33674 (0%)]	Loss: 644.880000
+====> Epoch: 1 Average loss: 525.6454
+Train Epoch: 2 [0/33674 (0%)]	Loss: 436.175508
+====> Epoch: 2 Average loss: 321.9003
+Train Epoch: 3 [0/33674 (0%)]	Loss: 266.259883
+====> Epoch: 3 Average loss: 246.6245
+Train Epoch: 4 [0/33674 (0%)]	Loss: 246.416719
+====> Epoch: 4 Average loss: 229.0059
+Train Epoch: 5 [0/33674 (0%)]	Loss: 208.040527
+====> Epoch: 5 Average loss: 201.7925
+Train Epoch: 6 [0/33674 (0%)]	Loss: 199.300781
+====> Epoch: 6 Average loss: 194.3147
+Train Epoch: 7 [0/33674 (0%)]	Loss: 199.776758
+====> Epoch: 7 Average loss: 190.9036
+Train Epoch: 8 [0/33674 (0%)]	Loss: 193.222168
+====> Epoch: 8 Average loss: 185.9748
+Train Epoch: 9 [0/33674 (0%)]	Loss: 189.560273
+====> Epoch: 9 Average loss: 182.0254
+Train Epoch: 10 [0/33674 (0%)]	Loss: 182.403672
+====> Epoch: 10 Average loss: 176.5430
+Train Epoch: 11 [0/33674 (0%)]	Loss: 175.911230
+====> Epoch: 11 Average loss: 170.2175
+Train Epoch: 12 [0/33674 (0%)]	Loss: 169.351270
+====> Epoch: 12 Average loss: 164.6107
+Train Epoch: 13 [0/33674 (0%)]	Loss: 164.692227
+====> Epoch: 13 Average loss: 159.6930
+Train Epoch: 14 [0/33674 (0%)]	Loss: 158.712344
+====> Epoch: 14 Average loss: 153.3173
+Train Epoch: 15 [0/33674 (0%)]	Loss: 151.265801
+====> Epoch: 15 Average loss: 145.8352
+Train Epoch: 16 [0/33674 (0%)]	Loss: 143.187354
+====> Epoch: 16 Average loss: 138.6125
+Train Epoch: 17 [0/33674 (0%)]	Loss: 138.116963
+====> Epoch: 17 Average loss: 134.5016
+Train Epoch: 18 [0/33674 (0%)]	Loss: 135.712900
+====> Epoch: 18 Average loss: 132.3784
+Train Epoch: 19 [0/33674 (0%)]	Loss: 133.876299
+====> Epoch: 19 Average loss: 130.3770
+Train Epoch: 20 [0/33674 (0%)]	Loss: 131.346855
+====> Epoch: 20 Average loss: 127.8526
+Train Epoch: 21 [0/33674 (0%)]	Loss: 128.778408
+====> Epoch: 21 Average loss: 125.5716
+Train Epoch: 22 [0/33674 (0%)]	Loss: 127.018652
+====> Epoch: 22 Average loss: 124.0047
+Train Epoch: 23 [0/33674 (0%)]	Loss: 125.589463
+====> Epoch: 23 Average loss: 122.6442
+Train Epoch: 24 [0/33674 (0%)]	Loss: 124.153008
+====> Epoch: 24 Average loss: 121.3766
+Train Epoch: 25 [0/33674 (0%)]	Loss: 123.238145
+====> Epoch: 25 Average loss: 120.4915
+Train Epoch: 26 [0/33674 (0%)]	Loss: 122.617695
+====> Epoch: 26 Average loss: 119.4630
+Train Epoch: 27 [0/33674 (0%)]	Loss: 120.757793
+====> Epoch: 27 Average loss: 118.0192
+Train Epoch: 28 [0/33674 (0%)]	Loss: 120.061592
+====> Epoch: 28 Average loss: 117.1455
+Train Epoch: 29 [0/33674 (0%)]	Loss: 118.765576
+====> Epoch: 29 Average loss: 115.8827
+Train Epoch: 30 [0/33674 (0%)]	Loss: 117.631875
+====> Epoch: 30 Average loss: 114.8858
+Train Epoch: 31 [0/33674 (0%)]	Loss: 116.743613
+====> Epoch: 31 Average loss: 113.9083
+Train Epoch: 32 [0/33674 (0%)]	Loss: 115.561348
+====> Epoch: 32 Average loss: 112.8395
+Train Epoch: 33 [0/33674 (0%)]	Loss: 114.563721
+====> Epoch: 33 Average loss: 111.8922
+Train Epoch: 34 [0/33674 (0%)]	Loss: 113.638252
+====> Epoch: 34 Average loss: 110.9490
+Train Epoch: 35 [0/33674 (0%)]	Loss: 112.601748
+====> Epoch: 35 Average loss: 109.9568
+Train Epoch: 36 [0/33674 (0%)]	Loss: 111.613545
+====> Epoch: 36 Average loss: 109.0372
+Train Epoch: 37 [0/33674 (0%)]	Loss: 110.762520
+====> Epoch: 37 Average loss: 108.2468
+Train Epoch: 38 [0/33674 (0%)]	Loss: 110.038213
+====> Epoch: 38 Average loss: 107.6034
+Train Epoch: 39 [0/33674 (0%)]	Loss: 109.432617
+====> Epoch: 39 Average loss: 107.1303
+Train Epoch: 40 [0/33674 (0%)]	Loss: 109.136719
+====> Epoch: 40 Average loss: 106.9670
+Train Epoch: 41 [0/33674 (0%)]	Loss: 109.484209
+====> Epoch: 41 Average loss: 107.0958
+Train Epoch: 42 [0/33674 (0%)]	Loss: 109.395654
+====> Epoch: 42 Average loss: 106.4219
+Train Epoch: 43 [0/33674 (0%)]	Loss: 107.385332
+====> Epoch: 43 Average loss: 105.1376
+Train Epoch: 44 [0/33674 (0%)]	Loss: 107.300977
+====> Epoch: 44 Average loss: 105.0234
+Train Epoch: 45 [0/33674 (0%)]	Loss: 107.026953
+====> Epoch: 45 Average loss: 104.4206
+Train Epoch: 46 [0/33674 (0%)]	Loss: 105.902588
+====> Epoch: 46 Average loss: 103.7014
+Train Epoch: 47 [0/33674 (0%)]	Loss: 105.728164
+====> Epoch: 47 Average loss: 103.4181
+Train Epoch: 48 [0/33674 (0%)]	Loss: 105.170400
+====> Epoch: 48 Average loss: 102.9007
+Train Epoch: 49 [0/33674 (0%)]	Loss: 104.722656
+====> Epoch: 49 Average loss: 102.5753
+Train Epoch: 50 [0/33674 (0%)]	Loss: 104.567070
+====> Epoch: 50 Average loss: 102.2882
+zOut ready at 72.33807873725891
+---0:01:12---Start Prune
+Start pruning 0th cell, cost 0.0001423358917236328s
+Start pruning 10000th cell, cost 287.91467666625977s
+Start pruning 20000th cell, cost 578.9230144023895s
+Start pruning 30000th cell, cost 867.8310594558716s
+---0:17:27---Prune Finished
+---0:17:29---EM process starts
+---0:17:29---Start 0th iteration.
+Louvain cluster: 25
+---0:19:48---Clustering Ends
+Total Cluster Number: 12
+Train Epoch: 1 [0/33674 (0%)]	Loss: 59.737061
+====> Epoch: 1 Average loss: 52.7170
+Train Epoch: 2 [0/33674 (0%)]	Loss: 50.817837
+====> Epoch: 2 Average loss: 50.9336
+Train Epoch: 3 [0/33674 (0%)]	Loss: 51.639873
+====> Epoch: 3 Average loss: 49.7409
+Train Epoch: 4 [0/33674 (0%)]	Loss: 48.607202
+====> Epoch: 4 Average loss: 47.3029
+Train Epoch: 5 [0/33674 (0%)]	Loss: 46.609175
+====> Epoch: 5 Average loss: 46.1996
+Train Epoch: 6 [0/33674 (0%)]	Loss: 46.772212
+====> Epoch: 6 Average loss: 45.8293
+Train Epoch: 7 [0/33674 (0%)]	Loss: 45.734126
+====> Epoch: 7 Average loss: 45.1087
+Train Epoch: 8 [0/33674 (0%)]	Loss: 45.319985
+====> Epoch: 8 Average loss: 44.6966
+Train Epoch: 9 [0/33674 (0%)]	Loss: 44.966816
+====> Epoch: 9 Average loss: 44.3991
+Train Epoch: 10 [0/33674 (0%)]	Loss: 44.731353
+====> Epoch: 10 Average loss: 44.1720
+Train Epoch: 11 [0/33674 (0%)]	Loss: 44.498740
+====> Epoch: 11 Average loss: 43.9688
+Train Epoch: 12 [0/33674 (0%)]	Loss: 44.339438
+====> Epoch: 12 Average loss: 43.8154
+Train Epoch: 13 [0/33674 (0%)]	Loss: 44.186655
+====> Epoch: 13 Average loss: 43.6814
+Train Epoch: 14 [0/33674 (0%)]	Loss: 44.082095
+====> Epoch: 14 Average loss: 43.5767
+Train Epoch: 15 [0/33674 (0%)]	Loss: 43.965503
+====> Epoch: 15 Average loss: 43.4683
+Train Epoch: 16 [0/33674 (0%)]	Loss: 43.868115
+====> Epoch: 16 Average loss: 43.3754
+Train Epoch: 17 [0/33674 (0%)]	Loss: 43.775034
+====> Epoch: 17 Average loss: 43.2835
+Train Epoch: 18 [0/33674 (0%)]	Loss: 43.689058
+====> Epoch: 18 Average loss: 43.2031
+Train Epoch: 19 [0/33674 (0%)]	Loss: 43.612500
+====> Epoch: 19 Average loss: 43.1266
+Train Epoch: 20 [0/33674 (0%)]	Loss: 43.533901
+====> Epoch: 20 Average loss: 43.0523
+---0:20:15---Start Prune
+Start pruning 0th cell, cost 0.00016307830810546875s
+Start pruning 10000th cell, cost 111.03323745727539s
+Start pruning 20000th cell, cost 221.6913197040558s
+Start pruning 30000th cell, cost 332.2034056186676s
+---0:26:27---Prune Finished
+---0:26:27---Start test converge condition
+celltype similarity:0.0
+---0:26:27---0th iteration in EM Finished
+---0:26:27---Start 1th iteration.
+Louvain cluster: 29
+---0:29:00---Clustering Ends
+Total Cluster Number: 14
+Train Epoch: 1 [0/33674 (0%)]	Loss: 43.466577
+====> Epoch: 1 Average loss: 42.9868
+Train Epoch: 2 [0/33674 (0%)]	Loss: 43.400254
+====> Epoch: 2 Average loss: 42.9175
+Train Epoch: 3 [0/33674 (0%)]	Loss: 43.332388
+====> Epoch: 3 Average loss: 42.8536
+Train Epoch: 4 [0/33674 (0%)]	Loss: 43.270752
+====> Epoch: 4 Average loss: 42.7938
+Train Epoch: 5 [0/33674 (0%)]	Loss: 43.218931
+====> Epoch: 5 Average loss: 42.7384
+Train Epoch: 6 [0/33674 (0%)]	Loss: 43.152905
+====> Epoch: 6 Average loss: 42.6787
+Train Epoch: 7 [0/33674 (0%)]	Loss: 43.101260
+====> Epoch: 7 Average loss: 42.6272
+Train Epoch: 8 [0/33674 (0%)]	Loss: 43.049238
+====> Epoch: 8 Average loss: 42.5796
+Train Epoch: 9 [0/33674 (0%)]	Loss: 43.008940
+====> Epoch: 9 Average loss: 42.5377
+Train Epoch: 10 [0/33674 (0%)]	Loss: 42.964902
+====> Epoch: 10 Average loss: 42.4895
+Train Epoch: 11 [0/33674 (0%)]	Loss: 42.908154
+====> Epoch: 11 Average loss: 42.4403
+Train Epoch: 12 [0/33674 (0%)]	Loss: 42.865967
+====> Epoch: 12 Average loss: 42.3967
+Train Epoch: 13 [0/33674 (0%)]	Loss: 42.820161
+====> Epoch: 13 Average loss: 42.3541
+Train Epoch: 14 [0/33674 (0%)]	Loss: 42.779385
+====> Epoch: 14 Average loss: 42.3138
+Train Epoch: 15 [0/33674 (0%)]	Loss: 42.739033
+====> Epoch: 15 Average loss: 42.2715
+Train Epoch: 16 [0/33674 (0%)]	Loss: 42.690522
+====> Epoch: 16 Average loss: 42.2248
+Train Epoch: 17 [0/33674 (0%)]	Loss: 42.637568
+====> Epoch: 17 Average loss: 42.1712
+Train Epoch: 18 [0/33674 (0%)]	Loss: 42.586724
+====> Epoch: 18 Average loss: 42.1239
+Train Epoch: 19 [0/33674 (0%)]	Loss: 42.537979
+====> Epoch: 19 Average loss: 42.0814
+Train Epoch: 20 [0/33674 (0%)]	Loss: 42.502388
+====> Epoch: 20 Average loss: 42.0509
+---0:29:27---Start Prune
+Start pruning 0th cell, cost 0.0001251697540283203s
+Start pruning 10000th cell, cost 122.17826008796692s
+Start pruning 20000th cell, cost 234.08999133110046s
+Start pruning 30000th cell, cost 346.0288372039795s
+---0:35:56---Prune Finished
+---0:35:56---Start test converge condition
+celltype similarity:0.6100292239362741
+---0:35:56---1th iteration in EM Finished
+---0:35:56---Starts Imputation
+Traceback (most recent call last):
+  File "scGNN.py", line 772, in <module>
+    celltypesample = celltypesample.to(device)
+RuntimeError: CUDA out of memory. Tried to allocate 4.22 GiB (GPU 0; 5.94 GiB total capacity; 4.77 GiB already allocated; 639.25 MiB free; 30.76 MiB cached)
