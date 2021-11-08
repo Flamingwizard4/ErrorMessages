@@ -1,12 +1,37 @@
-(scGNN) [jmoorman9@biocomputesrg scGNN]$ python -W ignore scGNN.py --datasetName CichlidData --datasetDir ./ --LTMGDir /data/home/jmoorman9/scGNN/ --outputDir outputdir/ --EM-iteration 2 --Regu-epochs 50 --EM-epochs 20 --quickmode --nonsparseMode --regulized-type LTMG
+scGNN]$ python -W ignore scGNN_debug.py --datasetName CichlidData --datasetDir ./ --LTMGDir /data/home/jmoorman9/scGNN/CichlidData --outputDir outputdir/ --EM-iteration 2 --Regu-epochs 50 --EM-epochs 20 --quickmode --nonsparseMode --regulized-type LTMG
 Using device:cuda
 ---0:00:00---scRNA starts loading.
 Load expression in csv format
----0:01:34---scRNA has been successfully loaded
----0:01:34---TrainLoader has been successfully prepared.
+---0:01:37---scRNA has been successfully loaded
+---0:01:37---TrainLoader has been successfully prepared.
 Start loading LTMG in sparse coding.
----0:01:43---LTMG has been successfully prepared.
----0:01:53---Pytorch model ready.
+Traceback (most recent call last):
+  File "scGNN_debug.py", line 194, in <module>
+    args.LTMGDir+args.datasetName+'/', args.ltmgFile)
+  File "/data/home/jmoorman9/scGNN/util_function.py", line 598, in readLTMG
+    skiprows=1, delim_whitespace=True)
+  File "/data/home/jmoorman9/anaconda3/envs/scGNN/lib/python3.6/site-packages/pandas/io/parsers.py", line 685, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/data/home/jmoorman9/anaconda3/envs/scGNN/lib/python3.6/site-packages/pandas/io/parsers.py", line 457, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+  File "/data/home/jmoorman9/anaconda3/envs/scGNN/lib/python3.6/site-packages/pandas/io/parsers.py", line 895, in __init__
+    self._make_engine(self.engine)
+  File "/data/home/jmoorman9/anaconda3/envs/scGNN/lib/python3.6/site-packages/pandas/io/parsers.py", line 1135, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/data/home/jmoorman9/anaconda3/envs/scGNN/lib/python3.6/site-packages/pandas/io/parsers.py", line 1917, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 689, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: [Errno 2] File b'/data/home/jmoorman9/scGNN/CichlidDataCichlidData/LTMG_sparse.mtx' does not exist: b'/data/home/jmoorman9/scGNN/CichlidDataCichlidData/LTMG_sparse.mtx'
+(scGNN) [jmoorman9@biocomputesrg scGNN]$ python -W ignore scGNN_debug.py --datasetName CichlidData --datasetDir ./ --LTMGDir /data/home/jmoorman9/scGNN/ --outputDir outputdir/ --EM-iteration 2 --Regu-epochs 50 --EM-epochs 20 --quickmode --nonsparseMode --regulized-type LTMG
+Using device:cuda
+---0:00:00---scRNA starts loading.
+Load expression in csv format
+---0:01:36---scRNA has been successfully loaded
+---0:01:36---TrainLoader has been successfully prepared.
+Start loading LTMG in sparse coding.
+---0:01:47---LTMG has been successfully prepared.
+---0:01:56---Pytorch model ready.
 Start training...
 Train Epoch: 1 [0/33674 (0%)]	Loss: 644.880000
 ====> Epoch: 1 Average loss: 525.6454
@@ -108,18 +133,20 @@ Train Epoch: 49 [0/33674 (0%)]	Loss: 104.722656
 ====> Epoch: 49 Average loss: 102.5753
 Train Epoch: 50 [0/33674 (0%)]	Loss: 104.567070
 ====> Epoch: 50 Average loss: 102.2882
-zOut ready at 72.33807873725891
----0:01:12---Start Prune
-Start pruning 0th cell, cost 0.0001423358917236328s
-Start pruning 10000th cell, cost 287.91467666625977s
-Start pruning 20000th cell, cost 578.9230144023895s
-Start pruning 30000th cell, cost 867.8310594558716s
----0:17:27---Prune Finished
----0:17:29---EM process starts
----0:17:29---Start 0th iteration.
+zOut ready at 73.95840764045715
+---0:01:14---Start Prune
+Start pruning 0th cell, cost 0.0002739429473876953s
+Start pruning 10000th cell, cost 263.9417426586151s
+Start pruning 20000th cell, cost 540.5840191841125s
+Start pruning 30000th cell, cost 818.9796636104584s
+---0:16:34---Prune Finished
+Mem consumption: 3465976
+---0:16:36---EM process starts
+---0:16:36---Start 0th iteration.
 Louvain cluster: 25
----0:19:48---Clustering Ends
+---0:18:49---Clustering Ends
 Total Cluster Number: 12
+Mem consumption: 49581316
 Train Epoch: 1 [0/33674 (0%)]	Loss: 59.737061
 ====> Epoch: 1 Average loss: 52.7170
 Train Epoch: 2 [0/33674 (0%)]	Loss: 50.817837
@@ -160,19 +187,23 @@ Train Epoch: 19 [0/33674 (0%)]	Loss: 43.612500
 ====> Epoch: 19 Average loss: 43.1266
 Train Epoch: 20 [0/33674 (0%)]	Loss: 43.533901
 ====> Epoch: 20 Average loss: 43.0523
----0:20:15---Start Prune
-Start pruning 0th cell, cost 0.00016307830810546875s
-Start pruning 10000th cell, cost 111.03323745727539s
-Start pruning 20000th cell, cost 221.6913197040558s
-Start pruning 30000th cell, cost 332.2034056186676s
----0:26:27---Prune Finished
----0:26:27---Start test converge condition
+Mem consumption: 49581316
+---0:19:16---Start Prune
+Start pruning 0th cell, cost 0.0002617835998535156s
+Start pruning 10000th cell, cost 108.78202080726624s
+Start pruning 20000th cell, cost 216.77540254592896s
+Start pruning 30000th cell, cost 325.3281192779541s
+---0:25:21---Prune Finished
+Mem consumption: 49581316
+Mem consumption: 49581316
+---0:25:21---Start test converge condition
 celltype similarity:0.0
----0:26:27---0th iteration in EM Finished
----0:26:27---Start 1th iteration.
+---0:25:21---0th iteration in EM Finished
+---0:25:21---Start 1th iteration.
 Louvain cluster: 29
----0:29:00---Clustering Ends
+---0:27:44---Clustering Ends
 Total Cluster Number: 14
+Mem consumption: 49581316
 Train Epoch: 1 [0/33674 (0%)]	Loss: 43.466577
 ====> Epoch: 1 Average loss: 42.9868
 Train Epoch: 2 [0/33674 (0%)]	Loss: 43.400254
@@ -213,17 +244,22 @@ Train Epoch: 19 [0/33674 (0%)]	Loss: 42.537979
 ====> Epoch: 19 Average loss: 42.0814
 Train Epoch: 20 [0/33674 (0%)]	Loss: 42.502388
 ====> Epoch: 20 Average loss: 42.0509
----0:29:27---Start Prune
-Start pruning 0th cell, cost 0.0001251697540283203s
-Start pruning 10000th cell, cost 122.17826008796692s
-Start pruning 20000th cell, cost 234.08999133110046s
-Start pruning 30000th cell, cost 346.0288372039795s
----0:35:56---Prune Finished
----0:35:56---Start test converge condition
+Mem consumption: 49581316
+---0:28:11---Start Prune
+Start pruning 0th cell, cost 0.0001518726348876953s
+Start pruning 10000th cell, cost 111.60312914848328s
+Start pruning 20000th cell, cost 223.71810698509216s
+Start pruning 30000th cell, cost 335.9378824234009s
+---0:34:30---Prune Finished
+Mem consumption: 49581316
+Mem consumption: 49581316
+---0:34:30---Start test converge condition
 celltype similarity:0.6100292239362741
----0:35:56---1th iteration in EM Finished
----0:35:56---Starts Imputation
+---0:34:30---1th iteration in EM Finished
+---0:34:30---Starts Imputation
+Mem consumption: 49581316
+Mem consumption: 49581316
 Traceback (most recent call last):
-  File "scGNN.py", line 772, in <module>
+  File "scGNN_debug.py", line 772, in <module>
     celltypesample = celltypesample.to(device)
 RuntimeError: CUDA out of memory. Tried to allocate 4.22 GiB (GPU 0; 5.94 GiB total capacity; 4.77 GiB already allocated; 639.25 MiB free; 30.76 MiB cached)
