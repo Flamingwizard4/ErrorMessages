@@ -1,2 +1,2 @@
 # ErrorMessages
-repo for clean error messages
+Clean error messages repo
