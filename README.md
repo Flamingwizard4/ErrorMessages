@@ -1,2 +1,2 @@
 # ErrorMessages
-Clean error messages repo
+Clean error messages
