@@ -1,0 +1,38 @@
+# remember to activate torch-mjrl env and start mongod server at port 22334 before testing
+FAIL: test_insert_sync (test_mongoexp.TestMongoTrials)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/flamingwizard4/anaconda3/envs/torch-mjrl/lib/python3.7/site-packages/hyperopt/tests/test_base.py", line 168, in test_insert_sync
+    assert len(trials) == 0
+AssertionError: 
+-------------------- >> begin captured stdout << ---------------------
+starting mongod ['mongod', '--dbpath=/tmp/hyperopt_test/db', '--noprealloc', '--port=22334']
+
+--------------------- >> end captured stdout << ----------------------
+-------------------- >> begin captured logging << --------------------
+hyperopt.mongoexp: INFO: PROTOCOL mongo
+hyperopt.mongoexp: INFO: USERNAME None
+hyperopt.mongoexp: INFO: HOSTNAME localhost
+hyperopt.mongoexp: INFO: PORT 22334
+hyperopt.mongoexp: INFO: PATH /__test_db/jobs
+hyperopt.mongoexp: INFO: AUTH DB None
+hyperopt.mongoexp: INFO: DB __test_db
+hyperopt.mongoexp: INFO: COLLECTION jobs
+hyperopt.mongoexp: INFO: PROTOCOL mongo
+hyperopt.mongoexp: INFO: USERNAME None
+hyperopt.mongoexp: INFO: HOSTNAME localhost
+hyperopt.mongoexp: INFO: PORT 22334
+hyperopt.mongoexp: INFO: PATH /__test_db/jobs
+hyperopt.mongoexp: INFO: AUTH DB None
+hyperopt.mongoexp: INFO: DB __test_db
+hyperopt.mongoexp: INFO: COLLECTION jobs
+hyperopt.mongoexp: INFO: PROTOCOL mongo
+hyperopt.mongoexp: INFO: USERNAME None
+hyperopt.mongoexp: INFO: HOSTNAME localhost
+hyperopt.mongoexp: INFO: PORT 22334
+hyperopt.mongoexp: INFO: PATH /foo/jobs
+hyperopt.mongoexp: INFO: AUTH DB None
+hyperopt.mongoexp: INFO: DB foo
+hyperopt.mongoexp: INFO: COLLECTION jobs
+hyperopt.mongoexp: DEBUG: Refresh data download took 0.004043 seconds for 4 ids
+--------------------- >> end captured logging << ---------------------
