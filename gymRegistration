@@ -1,0 +1,26 @@
+#hyperopt-mongo-worker ...
+Traceback (most recent call last):
+  File "/home/flamingwizard4/anaconda3/envs/torch-mjrl/bin/hyperopt-mongo-worker", line 8, in <module>
+    sys.exit(main())
+  File "/home/flamingwizard4/anaconda3/envs/torch-mjrl/lib/python3.7/site-packages/hyperopt/mongoexp.py", line 1329, in main
+    sys.exit(main_worker())
+  File "/home/flamingwizard4/anaconda3/envs/torch-mjrl/lib/python3.7/site-packages/hyperopt/mongoexp.py", line 1411, in main_worker
+    return main_worker_helper(options, args)
+  File "/home/flamingwizard4/anaconda3/envs/torch-mjrl/lib/python3.7/site-packages/hyperopt/mongoexp.py", line 1322, in main_worker_helper
+    mworker.run_one(reserve_timeout=float(options.reserve_timeout))
+  File "/home/flamingwizard4/anaconda3/envs/torch-mjrl/lib/python3.7/site-packages/hyperopt/mongoexp.py", line 1102, in run_one
+    result = worker_fn(spec, ctrl)
+  File "/home/flamingwizard4/anaconda3/envs/torch-mjrl/lib/python3.7/site-packages/hyperopt/base.py", line 892, in evaluate
+    rval = self.fn(pyll_rval)
+  File "/home/flamingwizard4/anaconda3/envs/torch-mjrl/bin/objective.py", line 47, in objective_func
+    e = GymEnv(job_data['env'])
+  File "/home/flamingwizard4/Desktop/mujoco_torch/mjrl/mjrl/utils/gym_env.py", line 23, in __init__
+    env = gym.make(env)
+  File "/home/flamingwizard4/anaconda3/envs/torch-mjrl/lib/python3.7/site-packages/gym/envs/registration.py", line 156, in make
+    return registry.make(id, **kwargs)
+  File "/home/flamingwizard4/anaconda3/envs/torch-mjrl/lib/python3.7/site-packages/gym/envs/registration.py", line 100, in make
+    spec = self.spec(path)
+  File "/home/flamingwizard4/anaconda3/envs/torch-mjrl/lib/python3.7/site-packages/gym/envs/registration.py", line 142, in spec
+    raise error.UnregisteredEnv('No registered env with id: {}'.format(id))
+gym.error.UnregisteredEnv: No registered env with id: relocate-v0
+INFO:hyperopt.mongoexp:exiting with N=9223372036854775803 after 4 consecutive exceptions
