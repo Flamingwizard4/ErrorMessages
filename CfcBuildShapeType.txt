@@ -1,0 +1,35 @@
+Traceback (most recent call last):
+  File "job_script_cfc.py", line 107, in <module>
+    bc_agent.train(save_policy=is_only_bc, task=job_data['env'].split('-')[0])
+  File "/home/ldd/Desktop/hand_manipulation/mjrl/mjrl/algos/behavior_cloning_cfc.py", line 158, in train
+    self.fit(data, **kwargs)
+  File "/home/ldd/Desktop/hand_manipulation/mjrl/mjrl/algos/behavior_cloning_cfc.py", line 126, in fit
+    loss_val = self.loss(data, idx=range(num_samples)).data.numpy().ravel()[0]
+  File "/home/ldd/Desktop/hand_manipulation/mjrl/mjrl/algos/behavior_cloning_cfc.py", line 79, in loss
+    return self.mse_loss(data, idx)
+  File "/home/ldd/Desktop/hand_manipulation/mjrl/mjrl/algos/behavior_cloning_cfc.py", line 107, in mse_loss
+    act_pi = self.policy.model.forward(obs)
+  File "/home/ldd/Desktop/hand_manipulation/mjrl/mjrl/policies/cfc_network.py", line 91, in forward
+    new_output, hidden_state = self.rnn_cell.call(inputs, hidden_state)
+  File "/home/ldd/anaconda3/envs/tf-mjrl/lib/python3.7/site-packages/kerasncp/tf/cfc_cell.py", line 318, in call
+    output, new_hidden = layer(layer_input, [states[i]])
+  File "/home/ldd/anaconda3/envs/tf-mjrl/lib/python3.7/site-packages/tensorflow/python/keras/engine/base_layer.py", line 1008, in __call__
+    self._maybe_build(inputs)
+  File "/home/ldd/anaconda3/envs/tf-mjrl/lib/python3.7/site-packages/tensorflow/python/keras/engine/base_layer.py", line 2710, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "/home/ldd/anaconda3/envs/tf-mjrl/lib/python3.7/site-packages/kerasncp/tf/cfc_cell.py", line 152, in build
+    name="ff1_weight",
+  File "/home/ldd/anaconda3/envs/tf-mjrl/lib/python3.7/site-packages/tensorflow/python/keras/engine/base_layer.py", line 639, in add_weight
+    caching_device=caching_device)
+  File "/home/ldd/anaconda3/envs/tf-mjrl/lib/python3.7/site-packages/tensorflow/python/training/tracking/base.py", line 810, in _add_variable_with_custom_getter
+    **kwargs_for_getter)
+  File "/home/ldd/anaconda3/envs/tf-mjrl/lib/python3.7/site-packages/tensorflow/python/keras/engine/base_layer_utils.py", line 129, in make_variable
+    variable_shape = tensor_shape.TensorShape(shape)
+  File "/home/ldd/anaconda3/envs/tf-mjrl/lib/python3.7/site-packages/tensorflow/python/framework/tensor_shape.py", line 758, in __init__
+    self._dims = [Dimension(d) for d in dims]
+  File "/home/ldd/anaconda3/envs/tf-mjrl/lib/python3.7/site-packages/tensorflow/python/framework/tensor_shape.py", line 758, in <listcomp>
+    self._dims = [Dimension(d) for d in dims]
+  File "/home/ldd/anaconda3/envs/tf-mjrl/lib/python3.7/site-packages/tensorflow/python/framework/tensor_shape.py", line 206, in __init__
+    .format(value, type(value))), None)
+  File "<string>", line 3, in raise_from
+TypeError: Dimension value must be integer or None or have an __index__ method, got value 'TensorShape([6])' with type '<class 'tensorflow.python.framework.tensor_shape.TensorShape'>'
