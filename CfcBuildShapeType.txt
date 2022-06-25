@@ -33,3 +33,5 @@ Traceback (most recent call last):
     .format(value, type(value))), None)
   File "<string>", line 3, in raise_from
 TypeError: Dimension value must be integer or None or have an __index__ method, got value 'TensorShape([6])' with type '<class 'tensorflow.python.framework.tensor_shape.TensorShape'>'
+
+Resolved by commit b7d5d6f of keras-ncp
