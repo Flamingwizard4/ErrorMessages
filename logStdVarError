@@ -1,0 +1,46 @@
+Running BC with expert demonstrations
+========================================
+BC training complete !!!
+time taken = 18.539432
+========================================
+Episode score = 7.428268, Success = 0
+Episode score = 22.932555, Success = 0
+Episode score = 5283.084454, Success = 1
+Episode score = 53.272966, Success = 0
+Episode score = 5331.487657, Success = 1
+Episode score = 5149.271017, Success = 1
+Episode score = 19.268554, Success = 0
+Episode score = -72.591240, Success = 0
+Episode score = 904.642344, Success = 0
+Episode score = 48.133971, Success = 0
+Average score = 1674.693055
+Success rate = 0.300000
+Score with behavior cloning = 1674.693055
+========================================
+Starting reinforcement learning phase
+========================================
+......................................................................................
+ITERATION : 0 
+enter this function -- batch_reinforce
+####### Gathering Samples #######
+======= Samples Gathered  ======= | >>>> Time taken = 4.106059 
+action:  (100, 24)
+return:  (100,)
+rewards:  (100,)
+advantages:  (100,)
+enter this --- yunhai
+not the basic one
+Traceback (most recent call last):
+  File "job_script_ncp.py", line 160, in <module>
+    evaluation_rollouts=job_data['eval_rollouts'])
+  File "/home/jmoorman9/Desktop/hand_manipulation/mjrl/mjrl/utils/train_agent.py", line 110, in train_agent
+    stats = agent.train_step(**args)  # this function is in batch_reinforce.py, with a train_from_paths function that can be rewritten
+  File "/home/jmoorman9/Desktop/hand_manipulation/mjrl/mjrl/algos/batch_reinforce.py", line 116, in train_step
+    eval_statistics = self.train_from_paths(paths)  # function (train_from_paths) is re-defied in npg_cg.py and dapg.py
+  File "/home/jmoorman9/Desktop/hand_manipulation/mjrl/mjrl/algos/dapg.py", line 123, in train_from_paths
+    dapg_grad = sample_coef*self.flat_vpg(all_obs, all_act, all_adv)  # sample_coef * vpg_grad (vpg_grad -> self.flat_vpg(all_obs, all_act, all_adv))
+  File "/home/jmoorman9/Desktop/hand_manipulation/mjrl/mjrl/algos/batch_reinforce.py", line 62, in flat_vpg
+    vpg_grad = torch.autograd.grad(cpi_surr, self.policy.trainable_params)  # pytorch autograd to obtain the gradient of the trainable parameters.
+  File "/home/jmoorman9/anaconda3/envs/mjrl2/lib/python3.7/site-packages/torch/autograd/__init__.py", line 236, in grad
+    inputs, allow_unused, accumulate_grad=False)
+RuntimeError: One of the differentiated Tensors appears to not have been used in the graph. Set allow_unused=True if this is the desired behavior.
